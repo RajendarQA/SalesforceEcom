@@ -42,7 +42,8 @@ Add the Emergency Product to the Cart
     Wait Until Element Is Visible    ${View_Cart_Popup}
     Click Element    ${View_Cart_Popup}
     Wait Until Element Is Visible    ${Product_Name_After_Adding-To_Cart}    180
-Fill the Emergency Details     
+Fill the Emergency Details
+    Sleep    4
     Wait Until Element Is Visible    ${Request_Emergency_Order_button}    180
     Click Element    ${Request_Emergency_Order_button}
     Wait Until Element Is Visible    ${Requested_By_Field}    100
@@ -57,10 +58,8 @@ Fill the Emergency Details
     Wait Until Element Is Visible    ${Job_Site_Name_field}    100
     ${Job_Site_Name}=    Generate Random String    10    [LETTERS]
     Input Text    ${Job_Site_Name_field}    ${Job_Site_Name}
-    Wait Until Element Is Visible    ${Requested_By_Field}    200
-    Sleep    1
-    Input Text    ${Requested_By_Field}    Jun 25, 2025
-    Sleep    1
+    Wait Until Element Is Visible    ${Requested_Delivery_Date_field}    200
+    Input Text    ${Requested_Delivery_Date_field}    Jun 25, 2025  
     Wait Until Element Is Visible    ${Model_Numbers_Field}    100
     ${Model_Numbers}=    Generate Random String    8    0123456789
     Input Text    ${Model_Numbers_Field}    ${Model_Numbers}
@@ -80,6 +79,9 @@ Fill the Emergency Details
     Click Element    ${Submit_button}
     Wait Until Element Is Visible    ${View_Emergency_Order_button}    180
     Click Element    ${View_Emergency_Order_button}
+    Wait Until Element Is Visible    ${daikin_logo}
+    Click Element    ${daikin_logo}
+    Close Browser
         
         
     

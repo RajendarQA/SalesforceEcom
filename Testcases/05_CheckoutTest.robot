@@ -6,7 +6,7 @@ Resource    ../Resources/Checkout.robot
 Verify if the user is able to checkout
     Click on checkout button
     Enter the Account Information
-    #Select The Delivery Option
+    Select The Delivery Option
     #Enter The Purchase Order Number
     #Click On Place Order Button
     #Close the browser

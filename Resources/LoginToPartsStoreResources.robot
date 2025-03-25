@@ -22,60 +22,84 @@ ${login_user_name}    //h1[contains(text(),' Rajendar Bolla')]
 Click App Launcher
     Wait Until Element Is Visible    ${app_launcher}    180
     Click Element    ${app_launcher}
-    
+
 Click Contacts Tab
     Wait Until Element Is Visible    ${contacts_tab}    180s
+    Highlight_Border    ${contacts_tab}    2px solid green
+    Sleep    3
     Execute Javascript    document.evaluate("${contacts_tab}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();    #Click Element    ${contacts_tab}
     #Execute JavaScript    arguments[0].click();    locator=${contacts_tab}
     #Execute JavaScript    document.querySelector("${contacts_tab}").click()
     #Sleep    10
     #Go To    ${contacts_url}
-    
+
 Select the Contact
     #${get_contact_text}=    Get Text    ${contact_ex}
     #Log To Console    ${get_contact_text}
     Wait Until Element Is Visible    ${contact_ex}    180
+    Highlight_Border    ${contact_ex}    2px solid green
+    Sleep    3
     Click Element    ${contact_ex}
-   
+
 Select the dropdown and click on Login to experience as user
     Wait Until Element Is Visible    ${contact_page_dropdown}    180
+    Highlight_Border    ${contact_page_dropdown}    2px solid green
+    Sleep    3    
     Click Element    ${contact_page_dropdown}
-    
+
 Select on Login to experience as user
     Wait Until Element Is Visible    ${Login_to_exp_as_user}    180
+    Highlight_Border    ${Login_to_exp_as_user}    2px solid green
+    Sleep    3
     Click Element    ${Login_to_exp_as_user}
-    
+
 Click on PartsStore option
     Wait Until Element Is Visible    ${parts_store_option}    180
+    Highlight_Border    ${parts_store_option}    2px solid green
+    Sleep    3
     Click Element    ${parts_store_option}
 
 Check if page contains Parts Store title
-    Wait Until Element Is Visible    ${Daikin_Logo}    30 
+    Wait Until Element Is Visible    ${Daikin_Logo}    30
     Click Element    ${Daikin_Logo}
+    Highlight_Border    ${Daikin_Logo}    2px solid green
+    Sleep    3
     #Wait Until Element Is Visible    ${parts_solutions_title}    20
     Page Should Contain    ${parts_solutions_title}
 
 Validate Logged-in User
-
+    Wait Until Element Is Visible    ${profile_icon}    20
+    Highlight_Border    ${profile_icon}    2px solid green
+    Sleep    3
     Click Element    ${profile_icon}
     Wait Until Element Is Visible    ${my_account_information}    10
+    Highlight_Border    ${my_account_information}    2px solid green
+    Sleep    3
     Click Element    ${my_account_information}
     ${after_login_user}=    Get Text    ${login_user_name}
+    Click Element    ${login_user_name}
+    Highlight_Border    ${login_user_name}    2px solid green
+    Sleep    3
     Log To Console    ${after_login_user}
     Should Be Equal    ${after_login_user}    Hello Rajendar Bolla
-
-
-        
-
     
-
-              
-    
-        
-
-    
-
+Highlight_Border
+    [Arguments]    ${xpath}    ${border_style}
+    ${script}=    Catenate    SEPARATOR=
+    ...    document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";
+    Execute JavaScript    ${script}
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,55 +16,48 @@ ${order_confirmation_no}    //p[@class='order-confirmation-number']
 
 *** Keywords ***
 Click on checkout button
-    Wait Until Element Is Visible    ${checkout_btn}    180
     Click Element    ${checkout_btn}
-    Wait Until Element Is Visible    ${Proceed_btn}    120
+    Wait Until Element Is Visible    ${Proceed_btn}    180
     Scroll Element Into View    ${Proceed_btn}
     Click Element    ${Proceed_btn}
-    
 Enter the Account Information
-    Wait Until Element Is Visible    ${name_first}    100
+    Wait Until Element Is Visible    ${name_last}    180
     Click Element    ${name_first}
+    Sleep    1
     ${firstname}=    Generate Random String    8    [LOWER]
     Input Text    ${name_first}    ${firstname}
-    Wait Until Element Is Visible    ${name_last}    100
+    Sleep    1
     Click Element    ${name_last}
     ${lastname}=    Generate Random String    8    [LOWER]
     Input Text    ${name_last}    ${lastname}
-    Wait Until Element Is Visible    ${contact_phone}    100
+    Sleep    1
     Click Element    ${contact_phone}
     ${contact_num}=    Generate Random String    10    0123456789
     Input Text    ${contact_phone}    ${contact_num}
-    Wait Until Element Is Visible    ${order_comments}    100
+    Sleep    1
     Click Element    ${order_comments}
     Input Text    ${order_comments}    Test Comment
-    Wait Until Element Is Visible    ${Proceed_btn}    100
+    Sleep    1
     Click Element    ${Proceed_btn}
+    Sleep    50
 Select the Delivery Option
-    Wait Until Element Is Visible    //span[@class="slds-form-element__label flex-grow" and normalize-space(text())='Ground Best Way (USA-Canada)']    180s
     Click Element    ${Proceed_btn}
+    Sleep    3
 Enter the purchase order number
-    Wait Until Element Is Visible    ${purchase_order_no}    180
     Click Element    ${purchase_order_no}
     ${random_digits}=    Generate Random String    4    0123456789
     ${po_num}=    Set Variable    PO-${random_digits}
     Input Text    ${purchase_order_no}    ${po_num}
+    Sleep    4
     Log To Console    ${po_num}
 Click on Place Order Button
-    Wait Until Element Is Visible    ${place_order_btn}    100
+    Sleep    5
     Scroll Element Into View    ${place_order_btn}
     Click Element    ${place_order_btn}
-    Wait Until Element Is Visible    ${order_confirmation_no}    180
+    Sleep    25
+    Wait Until Element Is Visible    ${order_confirmation_no}
+    Sleep    4
     Click Element    ${continue_shopping}
-    Wait Until Element Is Visible    //dxp_content_layout-site-logo[@class='lwc-440ckkrho00-host']//img[@class='lwc-6d0jmdgc6e8']    180
+    Sleep    5
 Close the browser
     Close Browser
-
-
-
-
-
-
-
-
-
