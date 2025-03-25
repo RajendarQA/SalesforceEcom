@@ -1,0 +1,2781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.0 on win32)" generated="2025-03-25T18:00:33.851598" rpa="false" schemaversion="5">
+<suite id="s1" name="01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest">
+<suite id="s1-s1" name="01 LoginTest" source="C:\Users\Shreshta.K\PycharmProjects\DaikinSalesforce_Automation\Testcases\01_LoginTest.robot">
+<test id="s1-s1-t1" name="Verify if user is able to go to the Login screen" line="7">
+<kw name="Open browser with url" owner="Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:34.345536" level="INFO">Opening browser 'chrome' to base url 'https://daa--qasit.sandbox.lightning.force.com/lightning/page/home'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-25T18:00:34.345536" elapsed="4.288165"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-25T18:00:38.641955" elapsed="0.092495"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>6</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-03-25T18:00:38.734450" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:00:34.345536" elapsed="4.388914"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:00:43.740587" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:00:38.739825" elapsed="5.000762"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:00:34.343258" elapsed="9.397329"/>
+</test>
+<test id="s1-s1-t2" name="Verify if user is able to view the elements in the login screen" line="10">
+<kw name="Check if elements are visible" owner="Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username_label}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:00:43.744213" elapsed="0.073720"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:43.856849" level="INFO">Element '//label[@class="label usernamelabel"]' is displayed.</msg>
+<arg>${username_label}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:00:43.817933" elapsed="0.041078"/>
+</kw>
+<kw name="Highlight_Border" owner="Login">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:00:43.883317" level="INFO">${script} = document.evaluate("//label[@class=\"label usernamelabel\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:00:43.883317" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:43.883317" level="INFO">Executing JavaScript:
+document.evaluate("//label[@class=\"label usernamelabel\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:00:43.883317" elapsed="0.016238"/>
+</kw>
+<arg>${username_label}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:00:43.883317" elapsed="0.024545"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${password_label}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:00:43.907862" elapsed="0.054312"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:44.000161" level="INFO">Element '//label[@for="password"]' is displayed.</msg>
+<arg>${password_label}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:00:43.965935" elapsed="0.034226"/>
+</kw>
+<kw name="Highlight_Border" owner="Login">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:00:44.007320" level="INFO">${script} = document.evaluate("//label[@for=\"password\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:00:44.000161" elapsed="0.007159"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:44.007320" level="INFO">Executing JavaScript:
+document.evaluate("//label[@for=\"password\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:00:44.007320" elapsed="0.018469"/>
+</kw>
+<arg>${password_label}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:00:44.000161" elapsed="0.025628"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:00:43.744213" elapsed="0.284358"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:00:43.744213" elapsed="0.284358"/>
+</test>
+<test id="s1-s1-t3" name="Verify if the user is able to enter the data in the login screen" line="13">
+<kw name="Fill the Login details" owner="Login">
+<kw name="Highlight_Border" owner="Login">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:00:44.039516" level="INFO">${script} = document.evaluate("//input[@id='username']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:00:44.034535" elapsed="0.004981"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:44.041534" level="INFO">Executing JavaScript:
+document.evaluate("//input[@id='username']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:00:44.041534" elapsed="0.014623"/>
+</kw>
+<arg>${username_field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:00:44.034535" elapsed="0.021622"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:00:47.056695" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:00:44.056157" elapsed="3.000538"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:47.058488" level="INFO">Typing text 'rajendar.bolla@daikinapplied.com.qasit' into text field '//input[@id='username']'.</msg>
+<arg>${username_field}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:00:47.058488" elapsed="0.303418"/>
+</kw>
+<kw name="Highlight_Border" owner="Login">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:00:47.373980" level="INFO">${script} = document.evaluate("//input[@id='password']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:00:47.369940" elapsed="0.004040"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:47.378016" level="INFO">Executing JavaScript:
+document.evaluate("//input[@id='password']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:00:47.375997" elapsed="0.012388"/>
+</kw>
+<arg>${password_field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:00:47.369940" elapsed="0.022703"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:00:50.395699" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:00:47.394789" elapsed="3.000910"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:50.398317" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2025-03-25T18:00:50.496293" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${password_field}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:00:50.398317" elapsed="0.288334"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-25T18:00:44.034535" elapsed="6.658913"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:00:52.695396" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:00:50.695020" elapsed="2.000376"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:00:44.034535" elapsed="8.661506"/>
+</test>
+<test id="s1-s1-t4" name="Verify if the user is able to Click on the Login button" line="17">
+<kw name="Click on the login button" owner="Login">
+<kw name="Highlight_Border" owner="Login">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:00:52.703417" level="INFO">${script} = document.evaluate("//input[@id='Login']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:00:52.703417" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:52.711725" level="INFO">Executing JavaScript:
+document.evaluate("//input[@id='Login']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:00:52.709555" elapsed="0.018760"/>
+</kw>
+<arg>${login_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:00:52.703417" elapsed="0.027117"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:00:55.731079" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:00:52.730534" elapsed="3.000545"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:00:55.733096" level="INFO">Clicking button '//input[@id='Login']'.</msg>
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:00:55.733096" elapsed="7.716027"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Commerce</arg>
+<arg>180</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-25T18:01:03.457278" elapsed="0.026769"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:03.511910" level="INFO">Current page contains text 'Commerce'.</msg>
+<arg>Commerce</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-25T18:01:03.484047" elapsed="0.027863"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:00:52.703417" elapsed="10.811812"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:00:52.703417" elapsed="10.811812"/>
+</test>
+<status status="PASS" start="2025-03-25T18:00:33.960013" elapsed="29.560145"/>
+</suite>
+<suite id="s1-s2" name="02 LoginToPartsStoreTest" source="C:\Users\Shreshta.K\PycharmProjects\DaikinSalesforce_Automation\Testcases\02_LoginToPartsStoreTest.robot">
+<test id="s1-s2-t1" name="Verify if the user is able to click on the contacts tab" line="6">
+<kw name="Click Contacts Tab" owner="NavigateToPartsStore">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${contacts_tab}</arg>
+<arg>180s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:01:03.558343" elapsed="0.055509"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:01:03.613852" level="INFO">${script} = document.evaluate("//span[normalize-space()='Contacts']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:01:03.613852" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:03.622043" level="INFO">Executing JavaScript:
+document.evaluate("//span[normalize-space()='Contacts']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:03.622043" elapsed="0.016674"/>
+</kw>
+<arg>${contacts_tab}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:01:03.613852" elapsed="0.024865"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:01:06.638875" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:01:03.638717" elapsed="3.000158"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:06.642439" level="INFO">Executing JavaScript:
+document.evaluate("//span[normalize-space()='Contacts']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+Without any arguments.</msg>
+<arg>document.evaluate("${contacts_tab}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:06.641778" elapsed="0.025110"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:03.558343" elapsed="3.114714"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:03.558343" elapsed="3.114714"/>
+</test>
+<test id="s1-s2-t2" name="Verify if the user is able to select the contact" line="9">
+<kw name="Select the Contact" owner="NavigateToPartsStore">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${contact_ex}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:01:06.682601" elapsed="6.460428"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:01:13.151523" level="INFO">${script} = document.evaluate("//span[contains(text(),'Rajendar Bolla')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:01:13.143029" elapsed="0.008494"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:13.151523" level="INFO">Executing JavaScript:
+document.evaluate("//span[contains(text(),'Rajendar Bolla')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:13.151523" elapsed="0.016458"/>
+</kw>
+<arg>${contact_ex}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:01:13.143029" elapsed="0.024952"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:01:16.168509" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:01:13.167981" elapsed="3.000528"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:16.168509" level="INFO">Clicking element '//span[contains(text(),'Rajendar Bolla')]'.</msg>
+<arg>${contact_ex}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:01:16.168509" elapsed="0.341120"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:06.682601" elapsed="9.829670"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:06.681350" elapsed="9.831529"/>
+</test>
+<test id="s1-s2-t3" name="Verify if the user is able to navigate to the parts store page" line="11">
+<kw name="Select the dropdown and click on Login to experience as user" owner="NavigateToPartsStore">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${contact_page_dropdown}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:01:16.521900" elapsed="2.122890"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:01:18.649802" level="INFO">${script} = document.evaluate("//lightning-button-menu[@class='menu-button-item slds-dropdown_actions slds-dropdown-trigger slds-dropdown-trigger_click']//lightning-primitive-icon[@variant='bare']", document, nul...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:01:18.647780" elapsed="0.002022"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:18.652833" level="INFO">Executing JavaScript:
+document.evaluate("//lightning-button-menu[@class='menu-button-item slds-dropdown_actions slds-dropdown-trigger slds-dropdown-trigger_click']//lightning-primitive-icon[@variant='bare']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:18.652833" elapsed="0.024696"/>
+</kw>
+<arg>${contact_page_dropdown}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:01:18.644790" elapsed="0.032739"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:01:21.686106" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:01:18.677529" elapsed="3.008577"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:21.689739" level="INFO">Clicking element '//lightning-button-menu[@class='menu-button-item slds-dropdown_actions slds-dropdown-trigger slds-dropdown-trigger_click']//lightning-primitive-icon[@variant='bare']'.</msg>
+<arg>${contact_page_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:01:21.689739" elapsed="0.228990"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:16.517915" elapsed="5.400814"/>
+</kw>
+<kw name="Select on Login to experience as user" owner="NavigateToPartsStore">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login_to_exp_as_user}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:01:21.918729" elapsed="0.041505"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:01:21.969787" level="INFO">${script} = document.evaluate("//span[normalize-space()='Log in to Experience as User']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:01:21.967765" elapsed="0.002022"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:21.969787" level="INFO">Executing JavaScript:
+document.evaluate("//span[normalize-space()='Log in to Experience as User']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:21.969787" elapsed="0.021185"/>
+</kw>
+<arg>${Login_to_exp_as_user}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:01:21.960234" elapsed="0.033089"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:01:24.993566" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:01:21.993323" elapsed="3.000243"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:25.013297" level="INFO">Clicking element '//span[normalize-space()='Log in to Experience as User']'.</msg>
+<arg>${Login_to_exp_as_user}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:01:25.013297" elapsed="0.169861"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:21.918729" elapsed="3.276234"/>
+</kw>
+<kw name="Click on PartsStore option" owner="NavigateToPartsStore">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${parts_store_option}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:01:25.196976" elapsed="1.283236"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:01:26.480212" level="INFO">${script} = document.evaluate("//span[normalize-space()='PartsStore']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:01:26.480212" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:26.492100" level="INFO">Executing JavaScript:
+document.evaluate("//span[normalize-space()='PartsStore']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:26.488663" elapsed="0.018436"/>
+</kw>
+<arg>${parts_store_option}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:01:26.480212" elapsed="0.026887"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:01:29.512464" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:01:26.512205" elapsed="3.000259"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:29.512464" level="INFO">Clicking element '//span[normalize-space()='PartsStore']'.</msg>
+<arg>${parts_store_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:01:29.512464" elapsed="22.049571"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:25.194963" elapsed="26.371051"/>
+</kw>
+<kw name="Check if page contains Parts Store title" owner="NavigateToPartsStore">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Daikin_Logo}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:01:51.566014" elapsed="0.079175"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:51.650222" level="INFO">Clicking element '(//img[@class="lwc-6d0jmdgc6e8"])[1]'.</msg>
+<arg>${Daikin_Logo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:01:51.645189" elapsed="0.266213"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:01:51.917722" level="INFO">${script} = document.evaluate("(//img[@class=\"lwc-6d0jmdgc6e8\"])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:01:51.913806" elapsed="0.003916"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:51.917722" level="INFO">Executing JavaScript:
+document.evaluate("(//img[@class=\"lwc-6d0jmdgc6e8\"])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:51.917722" elapsed="0.016266"/>
+</kw>
+<arg>${Daikin_Logo}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:01:51.913806" elapsed="0.020182"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:01:54.934528" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:01:51.933988" elapsed="3.000540"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:54.986654" level="INFO">Current page contains text 'Parts Solutions'.</msg>
+<arg>${parts_solutions_title}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-25T18:01:54.938001" elapsed="0.048653"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:51.566014" elapsed="3.424249"/>
+</kw>
+<kw name="Validate Logged-in User" owner="NavigateToPartsStore">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${profile_icon}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:01:54.990263" elapsed="0.045140"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:01:55.039505" level="INFO">${script} = document.evaluate("//span[@class='menu-trigger-p slds-text-align_right slds-truncate slds-text-title_bold lwc-5uc1gleli5']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue....</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:01:55.039505" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:55.043725" level="INFO">Executing JavaScript:
+document.evaluate("//span[@class='menu-trigger-p slds-text-align_right slds-truncate slds-text-title_bold lwc-5uc1gleli5']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:55.043725" elapsed="0.015052"/>
+</kw>
+<arg>${profile_icon}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:01:55.035403" elapsed="0.024386"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:01:58.060483" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:01:55.059789" elapsed="3.000694"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:58.061799" level="INFO">Clicking element '//span[@class='menu-trigger-p slds-text-align_right slds-truncate slds-text-title_bold lwc-5uc1gleli5']'.</msg>
+<arg>${profile_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:01:58.061799" elapsed="0.170208"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${my_account_information}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:01:58.240430" elapsed="0.065782"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:01:58.306212" level="INFO">${script} = document.evaluate("//span[@title=\"My Account Information\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:01:58.306212" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:01:58.314721" level="INFO">Executing JavaScript:
+document.evaluate("//span[@title=\"My Account Information\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:01:58.306212" elapsed="0.017629"/>
+</kw>
+<arg>${my_account_information}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:01:58.306212" elapsed="0.025095"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:01.332010" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:01:58.331307" elapsed="3.000703"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:01.334039" level="INFO">Clicking element '//span[@title="My Account Information"]'.</msg>
+<arg>${my_account_information}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:01.334039" elapsed="0.169114"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:03.481152" level="INFO">${after_login_user} = Hello Rajendar Bolla</msg>
+<var>${after_login_user}</var>
+<arg>${login_user_name}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:01.507100" elapsed="1.974052"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:03.489242" level="INFO">Clicking element '//h1[contains(text(),' Rajendar Bolla')]'.</msg>
+<arg>${login_user_name}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:03.489242" elapsed="0.155844"/>
+</kw>
+<kw name="Highlight_Border" owner="NavigateToPartsStore">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:03.678489" level="INFO">${script} = document.evaluate("//h1[contains(text(),' Rajendar Bolla')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:03.675430" elapsed="0.003059"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:03.678489" level="INFO">Executing JavaScript:
+document.evaluate("//h1[contains(text(),' Rajendar Bolla')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:03.678489" elapsed="0.016679"/>
+</kw>
+<arg>${login_user_name}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:03.675430" elapsed="0.019738"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:06.704071" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:03.703763" elapsed="3.000308"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${after_login_user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-25T18:02:06.706512" elapsed="0.000996"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${after_login_user}</arg>
+<arg>Hello Rajendar Bolla</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-25T18:02:06.707508" elapsed="0.001006"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:54.990263" elapsed="11.718251"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:01:16.517915" elapsed="50.191597"/>
+</test>
+<status status="PASS" start="2025-03-25T18:01:03.538422" elapsed="63.177089"/>
+</suite>
+<suite id="s1-s3" name="03 CreateACartTest" source="C:\Users\Shreshta.K\PycharmProjects\DaikinSalesforce_Automation\Testcases\03_CreateACartTest.robot">
+<test id="s1-s3-t1" name="Verify if the user is able to create a new cart" line="6">
+<kw name="Click on the profile icon" owner="CreateACart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${profile_icon}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:06.801429" elapsed="0.029035"/>
+</kw>
+<kw name="Highlight_Border" owner="CreateACart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:06.839456" level="INFO">${script} = document.evaluate("//span[@class='menu-trigger-p slds-text-align_right slds-truncate slds-text-title_bold lwc-5uc1gleli5']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue....</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:06.837524" elapsed="0.001932"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:06.839456" level="INFO">Executing JavaScript:
+document.evaluate("//span[@class='menu-trigger-p slds-text-align_right slds-truncate slds-text-title_bold lwc-5uc1gleli5']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:06.839456" elapsed="0.015615"/>
+</kw>
+<arg>${profile_icon}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:06.830464" elapsed="0.025326"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:09.856541" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:06.855790" elapsed="3.000751"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:09.858368" level="INFO">Clicking element '//span[@class='menu-trigger-p slds-text-align_right slds-truncate slds-text-title_bold lwc-5uc1gleli5']'.</msg>
+<arg>${profile_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:09.858368" elapsed="0.182275"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:02:06.801429" elapsed="3.239214"/>
+</kw>
+<kw name="Click on my carts option" owner="CreateACart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${my_carts}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:10.046488" elapsed="0.049783"/>
+</kw>
+<kw name="Highlight_Border" owner="CreateACart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:10.096271" level="INFO">${script} = document.evaluate("//span[@title=\"My Carts\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:10.096271" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:10.105663" level="INFO">Executing JavaScript:
+document.evaluate("//span[@title=\"My Carts\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:10.105663" elapsed="0.015231"/>
+</kw>
+<arg>${my_carts}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:10.096271" elapsed="0.024623"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:13.121237" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:10.120894" elapsed="3.000343"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:13.123591" level="INFO">Clicking element '//span[@title="My Carts"]'.</msg>
+<arg>${my_carts}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:13.123591" elapsed="0.177060"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:02:10.040643" elapsed="3.265385"/>
+</kw>
+<kw name="Create a new cart" owner="CreateACart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${new_cart_btn}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:13.306028" elapsed="1.731545"/>
+</kw>
+<kw name="Highlight_Border" owner="CreateACart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:15.044857" level="INFO">${script} = document.evaluate("//span[@class='btnLabel']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:15.042837" elapsed="0.002020"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:15.045875" level="INFO">Executing JavaScript:
+document.evaluate("//span[@class='btnLabel']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:15.045875" elapsed="0.016257"/>
+</kw>
+<arg>${new_cart_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:15.037573" elapsed="0.024559"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:18.062382" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:15.062132" elapsed="3.000250"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:18.062382" level="INFO">Clicking element '//span[@class='btnLabel']'.</msg>
+<arg>${new_cart_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:18.062382" elapsed="0.185917"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:02:13.306028" elapsed="4.961106"/>
+</kw>
+<kw name="Rename the cart name" owner="CreateACart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>(//span[@class="textBlue"])[1]</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:18.267134" elapsed="0.048146"/>
+</kw>
+<kw name="Highlight_Border" owner="CreateACart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:18.315280" level="INFO">${script} = document.evaluate("(//span[@class=\"textBlue\"])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:18.315280" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:18.322432" level="INFO">Executing JavaScript:
+document.evaluate("(//span[@class=\"textBlue\"])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:18.321817" elapsed="0.016877"/>
+</kw>
+<arg>(//span[@class="textBlue"])[1]</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:18.315280" elapsed="0.023414"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:21.339466" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:18.338694" elapsed="3.000772"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${pencil_icon_curr_cart}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:21.339466" elapsed="0.047911"/>
+</kw>
+<kw name="Highlight_Border" owner="CreateACart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:21.387377" level="INFO">${script} = document.evaluate("//div[@class='row']//div[@class='info infoCartName']//lightning-primitive-icon[@exportparts='icon']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.styl...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:21.387377" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:21.395531" level="INFO">Executing JavaScript:
+document.evaluate("//div[@class='row']//div[@class='info infoCartName']//lightning-primitive-icon[@exportparts='icon']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:21.395531" elapsed="0.015955"/>
+</kw>
+<arg>${pencil_icon_curr_cart}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:21.387377" elapsed="0.028251"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:26.416062" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:21.415628" elapsed="5.000434"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:26.418430" level="INFO">Clicking element '//div[@class='row']//div[@class='info infoCartName']//lightning-primitive-icon[@exportparts='icon']'.</msg>
+<arg>${pencil_icon_curr_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:26.418430" elapsed="0.176118"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${rename_curr_cart_txt_box}</arg>
+<arg>50</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:26.605399" elapsed="0.038023"/>
+</kw>
+<kw name="Highlight_Border" owner="CreateACart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:26.651740" level="INFO">${script} = document.evaluate("//input[contains(@id, 'input-')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:26.651740" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:26.658262" level="INFO">Executing JavaScript:
+document.evaluate("//input[contains(@id, 'input-')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:26.658262" elapsed="0.018245"/>
+</kw>
+<arg>${rename_curr_cart_txt_box}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:26.651740" elapsed="0.024767"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:29.677099" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:26.676507" elapsed="3.000592"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:29.680148" level="INFO">Clicking element '//input[contains(@id, 'input-')]'.</msg>
+<arg>${rename_curr_cart_txt_box}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:29.678119" elapsed="0.188125"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:29.889821" level="INFO">Sending key(s) ('CTRL+a', 'BACKSPACE') to //input[contains(@id, 'input-')] element.</msg>
+<msg time="2025-03-25T18:02:30.211980" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2025-03-25T18:02:30.211980" level="INFO">Sending key a</msg>
+<msg time="2025-03-25T18:02:30.211980" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2025-03-25T18:02:30.243156" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2025-03-25T18:02:30.243156" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>${rename_curr_cart_txt_box}</arg>
+<arg>CTRL+a</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-03-25T18:02:29.889821" elapsed="0.377029"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:02:30.266850" level="INFO">${random_num} = 2929</msg>
+<var>${random_num}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:02:30.266850" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-25T18:02:30.275039" level="INFO">${random_cart} = Automation_test_2929</msg>
+<var>${random_cart}</var>
+<arg>Automation_test_${random_num}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-25T18:02:30.275039" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:30.275039" level="INFO">Typing text 'Automation_test_2929' into text field '//input[contains(@id, 'input-')]'.</msg>
+<arg>${rename_curr_cart_txt_box}</arg>
+<arg>${random_cart}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:30.275039" elapsed="0.324979"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:30.604523" level="INFO">Clicking element '//button[normalize-space()='Save']'.</msg>
+<arg>${save_cart_name}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:30.604523" elapsed="0.175956"/>
+</kw>
+<kw name="Highlight_Border" owner="CreateACart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:30.786183" level="INFO">${script} = document.evaluate("//div[@class='btnBox desktopView']//btn[@class='btn viewCartBtn'][normalize-space()='View Cart']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.b...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:30.786183" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:30.791615" level="INFO">Executing JavaScript:
+document.evaluate("//div[@class='btnBox desktopView']//btn[@class='btn viewCartBtn'][normalize-space()='View Cart']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:30.791615" elapsed="0.016707"/>
+</kw>
+<arg>${view_cart_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:30.780479" elapsed="0.030455"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:33.814607" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:30.813798" elapsed="3.000809"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${view_cart_btn}</arg>
+<arg>40</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:33.814607" elapsed="0.049503"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:33.864110" level="INFO">Clicking element '//div[@class='btnBox desktopView']//btn[@class='btn viewCartBtn'][normalize-space()='View Cart']'.</msg>
+<arg>${view_cart_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:33.864110" elapsed="0.186940"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${daikin_logo}</arg>
+<arg>120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:34.071350" elapsed="0.047402"/>
+</kw>
+<kw name="Highlight_Border" owner="CreateACart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:34.123017" level="INFO">${script} = document.evaluate("//dxp_content_layout-site-logo[@class='lwc-440ckkrho00-host']//img[@class='lwc-6d0jmdgc6e8']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.borde...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:34.118752" elapsed="0.004265"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:34.126781" level="INFO">Executing JavaScript:
+document.evaluate("//dxp_content_layout-site-logo[@class='lwc-440ckkrho00-host']//img[@class='lwc-6d0jmdgc6e8']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:34.126781" elapsed="0.013340"/>
+</kw>
+<arg>${daikin_logo}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:34.118752" elapsed="0.024424"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:37.143486" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:34.143176" elapsed="3.000310"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:37.143486" level="INFO">Clicking element '//dxp_content_layout-site-logo[@class='lwc-440ckkrho00-host']//img[@class='lwc-6d0jmdgc6e8']'.</msg>
+<arg>${daikin_logo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:37.143486" elapsed="0.201408"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:02:18.267134" elapsed="19.077760"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:02:06.798072" elapsed="30.546822"/>
+</test>
+<status status="PASS" start="2025-03-25T18:02:06.734534" elapsed="30.618508"/>
+</suite>
+<suite id="s1-s4" name="04 AddProductToCartTest" source="C:\Users\Shreshta.K\PycharmProjects\DaikinSalesforce_Automation\Testcases\04_AddProductToCartTest.robot">
+<test id="s1-s4-t1" name="Verify if the user is able to view the parts page" line="6">
+<kw name="Click on Parts Tab" owner="AddProductToCart">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:37.394039" level="INFO">Clicking element '//span[normalize-space()='Parts']'.</msg>
+<arg>${parts_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:37.386880" elapsed="0.188953"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${see_all}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:37.583942" elapsed="0.066550"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:37.654139" level="INFO">${script} = document.evaluate("//span[@class='seeAll']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:37.653488" elapsed="0.000651"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:37.658778" level="INFO">Executing JavaScript:
+document.evaluate("//span[@class='seeAll']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:37.658778" elapsed="0.015665"/>
+</kw>
+<arg>${see_all}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:37.650492" elapsed="0.031474"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:40.683164" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:37.681966" elapsed="3.001198"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:40.687693" level="INFO">Clicking element '//span[@class='seeAll']'.</msg>
+<arg>${see_all}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:40.684923" elapsed="3.263594"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:02:37.386880" elapsed="6.561637"/>
+</kw>
+<kw name="Add Product to cart" owner="AddProductToCart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Product_name_test}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:43.951755" elapsed="3.665452"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:47.621442" level="INFO">${script} = document.evaluate("(//span[@class='prodName'])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:47.619926" elapsed="0.001516"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:47.621442" level="INFO">Executing JavaScript:
+document.evaluate("(//span[@class='prodName'])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:47.621442" elapsed="0.016343"/>
+</kw>
+<arg>${Product_name_test}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:47.617207" elapsed="0.024452"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:50.641986" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:47.641659" elapsed="3.000327"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//img[@alt='TSTAT SUPPORT']</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:50.644004" elapsed="0.043629"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:02:50.687633" level="INFO">${script} = document.evaluate("//img[@alt='TSTAT SUPPORT']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:02:50.687633" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:50.687633" level="INFO">Executing JavaScript:
+document.evaluate("//img[@alt='TSTAT SUPPORT']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:02:50.687633" elapsed="0.025112"/>
+</kw>
+<arg>//img[@alt='TSTAT SUPPORT']</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:02:50.687633" elapsed="0.027639"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:02:53.715794" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:02:50.715272" elapsed="3.000522"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:02:53.717829" level="INFO">Clicking element '(//span[@class='prodName'])[1]'.</msg>
+<arg>${Product_name_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:02:53.717829" elapsed="0.180199"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//h1[normalize-space()='TSTAT SUPPORT']</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:02:53.906364" elapsed="9.096079"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:03.002443" level="INFO">${script} = document.evaluate("//h1[normalize-space()='TSTAT SUPPORT']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:03.002443" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:03.009949" level="INFO">Executing JavaScript:
+document.evaluate("//h1[normalize-space()='TSTAT SUPPORT']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:03.009949" elapsed="0.025554"/>
+</kw>
+<arg>//h1[normalize-space()='TSTAT SUPPORT']</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:03.002443" elapsed="0.040853"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:06.044108" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:03.043296" elapsed="3.000812"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:06.095905" level="INFO">${Product_Name} = TSTAT SUPPORT</msg>
+<var>${Product_Name}</var>
+<arg>//h1[normalize-space()='TSTAT SUPPORT']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:06.046313" elapsed="0.049592"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Product_Name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-25T18:03:06.095905" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add_To_Cart_PDP}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:06.095905" elapsed="0.041155"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:06.141280" level="INFO">${script} = document.evaluate("//button[normalize-space()='Add To Cart']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:06.141280" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:06.145153" level="INFO">Executing JavaScript:
+document.evaluate("//button[normalize-space()='Add To Cart']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:06.145153" elapsed="0.010163"/>
+</kw>
+<arg>${Add_To_Cart_PDP}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:06.137060" elapsed="0.025526"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:09.163509" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:06.162586" elapsed="3.000923"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:09.163509" level="INFO">Clicking element '//button[normalize-space()='Add To Cart']'.</msg>
+<arg>${Add_To_Cart_PDP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:09.163509" elapsed="0.181758"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${view_cart_popup}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:09.348743" elapsed="2.630671"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:11.979414" level="INFO">${script} = document.evaluate("//button[normalize-space()='VIEW CART']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:11.979414" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:11.987863" level="INFO">Executing JavaScript:
+document.evaluate("//button[normalize-space()='VIEW CART']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:11.986252" elapsed="0.016026"/>
+</kw>
+<arg>${view_cart_popup}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:11.979414" elapsed="0.024962"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:15.004973" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:12.004376" elapsed="3.000597"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:15.004973" level="INFO">Clicking element '//button[normalize-space()='VIEW CART']'.</msg>
+<arg>${view_cart_popup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:15.004973" elapsed="0.211716"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//b[normalize-space()='TSTAT SUPPORT']</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:15.217698" elapsed="3.829415"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:19.047113" level="INFO">${script} = document.evaluate("//b[normalize-space()='TSTAT SUPPORT']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:19.047113" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:19.054127" level="INFO">Executing JavaScript:
+document.evaluate("//b[normalize-space()='TSTAT SUPPORT']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:19.047113" elapsed="0.021356"/>
+</kw>
+<arg>//b[normalize-space()='TSTAT SUPPORT']</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:19.047113" elapsed="0.024567"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:22.072394" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:19.071680" elapsed="3.000714"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:22.114783" level="INFO">${Prod_validation} = TSTAT SUPPORT</msg>
+<var>${Prod_validation}</var>
+<arg>//b[normalize-space()='TSTAT SUPPORT']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:22.074154" elapsed="0.040629"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Prod_validation}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-25T18:03:22.118452" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${Prod_validation}</arg>
+<arg>TSTAT SUPPORT</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-25T18:03:22.118452" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Product Name validation Pass</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-25T18:03:22.118452" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>(//span[@part='formatted-rich-text'][normalize-space()='Q668910601'])[1]</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:22.118452" elapsed="0.037176"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:22.155628" level="INFO">${script} = document.evaluate("(//span[@part='formatted-rich-text'][normalize-space()='Q668910601'])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:22.155628" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:22.164100" level="INFO">Executing JavaScript:
+document.evaluate("(//span[@part='formatted-rich-text'][normalize-space()='Q668910601'])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:22.164100" elapsed="0.011470"/>
+</kw>
+<arg>(//span[@part='formatted-rich-text'][normalize-space()='Q668910601'])[1]</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:22.155628" elapsed="0.019942"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:25.182349" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:22.175570" elapsed="3.006779"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:25.252418" level="INFO">${pn_validation} = Q668910601</msg>
+<var>${pn_validation}</var>
+<arg>(//span[@part='formatted-rich-text'][normalize-space()='Q668910601'])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:25.183590" elapsed="0.068828"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${pn_validation}</arg>
+<arg>Q668910601</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-25T18:03:25.256108" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PN Validation Pass</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-25T18:03:25.256108" elapsed="0.002301"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class='mobile-hide']//lightning-formatted-number[contains(text(),'$2.99')]</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:25.258409" elapsed="0.067965"/>
+</kw>
+<kw name="Highlight_Border" owner="AddProductToCart">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:25.326374" level="INFO">${script} = document.evaluate("//div[@class='mobile-hide']//lightning-formatted-number[contains(text(),'$2.99')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px so...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:25.326374" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:25.356386" level="INFO">Executing JavaScript:
+document.evaluate("//div[@class='mobile-hide']//lightning-formatted-number[contains(text(),'$2.99')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:25.350309" elapsed="0.021099"/>
+</kw>
+<arg>//div[@class='mobile-hide']//lightning-formatted-number[contains(text(),'$2.99')]</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:25.326374" elapsed="0.046046"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:28.375615" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:25.374697" elapsed="3.000918"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:28.411923" level="INFO">${price_validation} = $2.99</msg>
+<var>${price_validation}</var>
+<arg>//div[@class='mobile-hide']//lightning-formatted-number[contains(text(),'$2.99')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:28.377375" elapsed="0.034548"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${price_validation}</arg>
+<arg>$2.99</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-25T18:03:28.420659" elapsed="0.001030"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Price validation pass</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-25T18:03:28.421689" elapsed="0.000885"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:02:43.951755" elapsed="44.470819"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:02:37.386880" elapsed="51.035694"/>
+</test>
+<status status="PASS" start="2025-03-25T18:02:37.361186" elapsed="51.067608"/>
+</suite>
+<suite id="s1-s5" name="05 EmergencyOrderTest" source="C:\Users\Shreshta.K\PycharmProjects\DaikinSalesforce_Automation\Testcases\05_EmergencyOrderTest.robot">
+<test id="s1-s5-t1" name="Verify if the user is able to add an emergency product into cart" line="6">
+<kw name="Search for the emergency Product" owner="EmergencyOrder">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${daikin_logo}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:28.462066" elapsed="0.040309"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:28.502375" level="INFO">${script} = document.evaluate("//dxp_content_layout-site-logo[@class='lwc-440ckkrho00-host']//img[@class='lwc-6d0jmdgc6e8']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.borde...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:28.502375" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:28.510726" level="INFO">Executing JavaScript:
+document.evaluate("//dxp_content_layout-site-logo[@class='lwc-440ckkrho00-host']//img[@class='lwc-6d0jmdgc6e8']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:28.510726" elapsed="0.016880"/>
+</kw>
+<arg>${daikin_logo}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:28.502375" elapsed="0.025231"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:31.527980" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:28.527606" elapsed="3.000374"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:31.530590" level="INFO">Clicking element '//dxp_content_layout-site-logo[@class='lwc-440ckkrho00-host']//img[@class='lwc-6d0jmdgc6e8']'.</msg>
+<arg>${daikin_logo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:31.530590" elapsed="0.193830"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Search_bar}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:31.728481" elapsed="0.092428"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:31.826904" level="INFO">${script} = document.evaluate("//input[@class=\"searchInput\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:31.822925" elapsed="0.003979"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:31.830934" level="INFO">Executing JavaScript:
+document.evaluate("//input[@class=\"searchInput\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:31.828918" elapsed="0.018116"/>
+</kw>
+<arg>${Search_bar}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:31.822925" elapsed="0.030424"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:34.853784" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:31.853349" elapsed="3.000435"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:34.855265" level="INFO">Clicking element '//input[@class="searchInput"]'.</msg>
+<arg>${Search_bar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:34.855265" elapsed="0.221294"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:35.089617" level="INFO">Typing text '300069509' into text field '//input[@class="searchInput"]'.</msg>
+<arg>${Search_bar}</arg>
+<arg>300069509</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:35.089617" elapsed="0.387229"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Search_btn}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:35.485073" elapsed="0.060667"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:35.549762" level="INFO">${script} = document.evaluate("//button[@class=\"btn\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:35.547751" elapsed="0.002011"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:35.551524" level="INFO">Executing JavaScript:
+document.evaluate("//button[@class=\"btn\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:35.551524" elapsed="0.015666"/>
+</kw>
+<arg>${Search_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:35.545740" elapsed="0.021450"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:38.567211" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:35.567190" elapsed="3.000021"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:38.570776" level="INFO">Clicking element '//button[@class="btn"]'.</msg>
+<arg>${Search_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:38.568182" elapsed="0.156671"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:03:28.462066" elapsed="10.262787"/>
+</kw>
+<kw name="Add the Emergency Product to the Cart" owner="EmergencyOrder">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${emergency_product_pn}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:38.724853" elapsed="3.703329"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:42.437219" level="INFO">${script} = document.evaluate("//span[@class=\"prodName\" and text()=\"UV LIGHT ASSEMBLY 21\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:42.435093" elapsed="0.002126"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:42.437219" level="INFO">Executing JavaScript:
+document.evaluate("//span[@class=\"prodName\" and text()=\"UV LIGHT ASSEMBLY 21\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:42.437219" elapsed="0.018064"/>
+</kw>
+<arg>${emergency_product_pn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:42.428182" elapsed="0.032152"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:45.460754" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:42.460334" elapsed="3.000420"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:45.464385" level="INFO">Clicking element '//span[@class="prodName" and text()="UV LIGHT ASSEMBLY 21"]'.</msg>
+<arg>${emergency_product_pn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:45.460754" elapsed="0.244790"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add_To_cart_btn}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:45.705544" elapsed="1.179103"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:46.891440" level="INFO">${script} = document.evaluate("//button[@title=\"Add to Cart\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:46.884647" elapsed="0.006793"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:46.891440" level="INFO">Executing JavaScript:
+document.evaluate("//button[@title=\"Add to Cart\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:46.891440" elapsed="0.016842"/>
+</kw>
+<arg>${Add_To_cart_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:46.884647" elapsed="0.023635"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:49.918036" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:46.916342" elapsed="3.001694"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:49.920664" level="INFO">Clicking element '//button[@title="Add to Cart"]'.</msg>
+<arg>${Add_To_cart_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:49.920664" elapsed="0.162220"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${View_Cart_Popup}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:50.088301" elapsed="2.593715"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:52.690155" level="INFO">${script} = document.evaluate("//button[normalize-space()='VIEW CART']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:52.682016" elapsed="0.008139"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:52.690155" level="INFO">Executing JavaScript:
+document.evaluate("//button[normalize-space()='VIEW CART']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:52.690155" elapsed="0.016320"/>
+</kw>
+<arg>${View_Cart_Popup}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:52.682016" elapsed="0.024459"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:03:55.706859" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:52.706475" elapsed="3.000384"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:55.708618" level="INFO">Clicking element '//button[normalize-space()='VIEW CART']'.</msg>
+<arg>${View_Cart_Popup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:03:55.708618" elapsed="0.214961"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Product_Name_After_Adding-To_Cart}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:03:55.931992" elapsed="3.825834"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:03:59.766292" level="INFO">${script} = document.evaluate("//b[normalize-space()='UV LIGHT ASSEMBLY 21']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:03:59.757826" elapsed="0.008466"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:03:59.766292" level="INFO">Executing JavaScript:
+document.evaluate("//b[normalize-space()='UV LIGHT ASSEMBLY 21']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:03:59.766292" elapsed="0.016511"/>
+</kw>
+<arg>${Product_Name_After_Adding-To_Cart}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:03:59.757826" elapsed="0.024977"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:03.791525" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:03:59.782803" elapsed="4.008722"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:03:38.724853" elapsed="25.066672"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:03:28.453807" elapsed="35.341493"/>
+</test>
+<test id="s1-s5-t2" name="Verify if the user is able to fill the emergency details in the cart page" line="10">
+<kw name="Fill the Emergency Details" owner="EmergencyOrder">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${Request_Emergency_Order_button}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-25T18:04:03.805435" elapsed="0.324005"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Request_Emergency_Order_button}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:04.129440" elapsed="0.037233"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:04.173307" level="INFO">${script} = document.evaluate("(//button[@title='Emergency Order'][normalize-space()='Request Emergency Order'])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:04.166673" elapsed="0.006634"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:04.173307" level="INFO">Executing JavaScript:
+document.evaluate("(//button[@title='Emergency Order'][normalize-space()='Request Emergency Order'])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:04.173307" elapsed="0.016309"/>
+</kw>
+<arg>${Request_Emergency_Order_button}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:04.166673" elapsed="0.030321"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:07.198640" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:04.198012" elapsed="3.000628"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:07.199647" level="INFO">Clicking element '(//button[@title='Emergency Order'][normalize-space()='Request Emergency Order'])[1]'.</msg>
+<arg>${Request_Emergency_Order_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:07.199647" elapsed="0.191589"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Requested_By_Field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:07.394352" elapsed="0.049221"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:07.449656" level="INFO">${script} = document.evaluate("//label[contains(text(),'Requested By')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).sin...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:07.443573" elapsed="0.006083"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:07.451737" level="INFO">Executing JavaScript:
+document.evaluate("//label[contains(text(),'Requested By')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:07.451737" elapsed="0.008216"/>
+</kw>
+<arg>${Requested_By_Field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:07.443573" elapsed="0.022360"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:10.466829" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:07.465933" elapsed="3.000896"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:10.468847" level="INFO">Clicking element '//label[contains(text(),'Requested By')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Requested_By_Field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:10.468847" elapsed="0.187530"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:04:10.656377" level="INFO">${RANDOM_NUM} = 302</msg>
+<var>${RANDOM_NUM}</var>
+<arg>3</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:04:10.656377" elapsed="0.000000"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:04:10.661163" level="INFO">${RANDOM_NAME} = Zrzi</msg>
+<var>${RANDOM_NAME}</var>
+<arg>4</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:04:10.656377" elapsed="0.004786"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-25T18:04:10.661163" level="INFO">${Requested_By_User} = TestUser_Zrzi_302</msg>
+<var>${Requested_By_User}</var>
+<arg>TestUser_${RANDOM_NAME}_${RANDOM_NUM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-25T18:04:10.661163" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:10.664617" level="INFO">Typing text 'TestUser_Zrzi_302' into text field '//label[contains(text(),'Requested By')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Requested_By_Field}</arg>
+<arg>${Requested_By_User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:10.664617" elapsed="0.286322"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Phone_Number_field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:10.958990" elapsed="0.040085"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:11.003113" level="INFO">${script} = document.evaluate("//label[contains(text(),'Phone Number')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).sin...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:11.000200" elapsed="0.002913"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:11.003113" level="INFO">Executing JavaScript:
+document.evaluate("//label[contains(text(),'Phone Number')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:11.003113" elapsed="0.013497"/>
+</kw>
+<arg>${Phone_Number_field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:11.000200" elapsed="0.016410"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:14.025086" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:11.024846" elapsed="3.000240"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:04:14.027117" level="INFO">${Phone_Number} = 1758413852</msg>
+<var>${Phone_Number}</var>
+<arg>10</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:04:14.027117" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:14.029135" level="INFO">Typing text '1758413852' into text field '//label[contains(text(),'Phone Number')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Phone_Number_field}</arg>
+<arg>${Phone_Number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:14.029135" elapsed="0.259268"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Job_Site_Name_field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:14.288950" elapsed="0.040339"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:14.334532" level="INFO">${script} = document.evaluate("//label[contains(text(),'Job Site Name')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).si...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:14.332511" elapsed="0.002021"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:14.337439" level="INFO">Executing JavaScript:
+document.evaluate("//label[contains(text(),'Job Site Name')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:14.337439" elapsed="0.011788"/>
+</kw>
+<arg>${Job_Site_Name_field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:14.330489" elapsed="0.025139"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:17.356247" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:14.355628" elapsed="3.000619"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:04:17.358010" level="INFO">${Job_Site_Name} = KnbPJYPvkh</msg>
+<var>${Job_Site_Name}</var>
+<arg>10</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:04:17.358010" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:17.358010" level="INFO">Typing text 'KnbPJYPvkh' into text field '//label[contains(text(),'Job Site Name')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Job_Site_Name_field}</arg>
+<arg>${Job_Site_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:17.358010" elapsed="0.259326"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:17.625614" level="INFO">Clicking element '//label[contains(text(),'Requested Delivery Date')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Requested_Delivery_Date_field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:17.625614" elapsed="0.229045"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Requested_Delivery_Date_field}</arg>
+<arg>200</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:17.859671" elapsed="0.053222"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:17.921283" level="INFO">${script} = document.evaluate("//label[contains(text(),'Requested Delivery Date')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:17.912893" elapsed="0.008390"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:17.924322" level="INFO">Executing JavaScript:
+document.evaluate("//label[contains(text(),'Requested Delivery Date')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:17.921283" elapsed="0.018194"/>
+</kw>
+<arg>${Requested_Delivery_Date_field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:17.912893" elapsed="0.029683"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:20.944524" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:17.943782" elapsed="3.000742"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:20.949173" level="INFO">Typing text 'Jun 25, 2025' into text field '//label[contains(text(),'Requested Delivery Date')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Requested_Delivery_Date_field}</arg>
+<arg>Jun 25, 2025</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:20.945589" elapsed="0.255950"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Model_Numbers_Field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:21.209600" elapsed="0.042430"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:21.252030" level="INFO">Clicking element '//label[contains(text(),'Model Number(s)')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Model_Numbers_Field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:21.252030" elapsed="0.186168"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:21.445576" level="INFO">${script} = document.evaluate("//label[contains(text(),'Model Number(s)')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)....</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:21.438198" elapsed="0.007378"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:21.452277" level="INFO">Executing JavaScript:
+document.evaluate("//label[contains(text(),'Model Number(s)')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:21.445576" elapsed="0.024777"/>
+</kw>
+<arg>${Model_Numbers_Field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:21.438198" elapsed="0.032155"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:24.471268" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:21.470353" elapsed="3.000915"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:04:24.471268" level="INFO">${Model_Numbers} = 12217130</msg>
+<var>${Model_Numbers}</var>
+<arg>8</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:04:24.471268" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:24.477530" level="INFO">Typing text '12217130' into text field '//label[contains(text(),'Model Number(s)')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Model_Numbers_Field}</arg>
+<arg>${Model_Numbers}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:24.477530" elapsed="0.231840"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Serial_Numbers_field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:24.709370" elapsed="0.047812"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:24.757182" level="INFO">${script} = document.evaluate("//label[contains(text(),'Serial Number(s)')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)...</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:24.757182" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:24.765341" level="INFO">Executing JavaScript:
+document.evaluate("//label[contains(text(),'Serial Number(s)')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:24.765341" elapsed="0.016512"/>
+</kw>
+<arg>${Serial_Numbers_field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:24.757182" elapsed="0.024671"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:27.782060" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:24.781853" elapsed="3.000772"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:04:27.782625" level="INFO">${Serial_Numbers} = 81626966</msg>
+<var>${Serial_Numbers}</var>
+<arg>8</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:04:27.782625" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:27.787551" level="INFO">Typing text '81626966' into text field '//label[contains(text(),'Serial Number(s)')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${Serial_Numbers_field}</arg>
+<arg>${Serial_Numbers}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:27.787551" elapsed="0.295351"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${GO_or_SO_Numbers_field}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-25T18:04:28.082902" elapsed="0.305371"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${GO_or_SO_Numbers_field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:28.388273" elapsed="0.031569"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:28.427296" level="INFO">${script} = document.evaluate("//label[contains(text(),'GO or SO Number')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)....</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:28.427296" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:28.431979" level="INFO">Executing JavaScript:
+document.evaluate("//label[contains(text(),'GO or SO Number')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:28.431979" elapsed="0.017977"/>
+</kw>
+<arg>${GO_or_SO_Numbers_field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:28.427296" elapsed="0.024236"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:31.452094" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:28.451532" elapsed="3.000562"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:04:31.452094" level="INFO">${Go_Or_So_Number} = 22724274</msg>
+<var>${Go_Or_So_Number}</var>
+<arg>8</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:04:31.452094" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:31.456163" level="INFO">Typing text '22724274' into text field '//label[contains(text(),'GO or SO Number')]/descendant::abbr[normalize-space()='*']/ancestor::label/following::input[1]'.</msg>
+<arg>${GO_or_SO_Numbers_field}</arg>
+<arg>${Go_Or_So_Number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:31.456163" elapsed="0.251255"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${Please_Describe_the_emergency_situation_field}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-25T18:04:31.707418" elapsed="0.313978"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Please_Describe_the_emergency_situation_field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:32.021396" elapsed="0.038869"/>
+</kw>
+<kw name="Highlight_Border" owner="EmergencyOrder">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:32.065064" level="INFO">${script} = document.evaluate("//textarea[@maxlength=\"32768\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:32.060265" elapsed="0.004799"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:32.068398" level="INFO">Executing JavaScript:
+document.evaluate("//textarea[@maxlength=\"32768\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:32.068398" elapsed="0.017586"/>
+</kw>
+<arg>${Please_Describe_the_emergency_situation_field}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:32.060265" elapsed="0.025719"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:35.090893" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:32.085984" elapsed="3.004909"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:35.115291" level="INFO">Typing text 'This is a test situation for requesting an emergency order product' into text field '//textarea[@maxlength="32768"]'.</msg>
+<arg>${Please_Describe_the_emergency_situation_field}</arg>
+<arg>This is a test situation for requesting an emergency order product</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:35.115291" elapsed="0.516471"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:35.671651" level="INFO">Element '//span[@title='Terms &amp; Conditions']' is displayed.</msg>
+<arg>${Terms_And_Conditions}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:35.631762" elapsed="0.039889"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>(//span[@class='slds-checkbox_faux'])[1]</arg>
+<arg>200</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:35.675540" elapsed="0.036952"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:38.713512" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:35.712492" elapsed="3.002140"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:38.714632" level="INFO">Clicking element '(//span[@class='slds-checkbox_faux'])[1]'.</msg>
+<arg>(//span[@class='slds-checkbox_faux'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:38.714632" elapsed="0.167678"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Submit_button}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:38.882310" elapsed="0.049041"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:38.931351" level="INFO">Clicking element '//button[@aria-label='Save'and text()='Submit']'.</msg>
+<arg>${Submit_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:38.931351" elapsed="0.167024"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${View_Emergency_Order_button}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:39.098375" elapsed="9.223434"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:48.321809" level="INFO">Clicking element '//div[@class='mobile-hide']//button[@title='DEmergency Order'][normalize-space()='View Emergency Order']'.</msg>
+<arg>${View_Emergency_Order_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:48.321809" elapsed="0.169130"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:04:03.803416" elapsed="44.692012"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:04:03.803416" elapsed="44.692012"/>
+</test>
+<status status="PASS" start="2025-03-25T18:03:28.438068" elapsed="80.061373"/>
+</suite>
+<suite id="s1-s6" name="06 CheckoutTest" source="C:\Users\Shreshta.K\PycharmProjects\DaikinSalesforce_Automation\Testcases\06_CheckoutTest.robot">
+<test id="s1-s6-t1" name="Verify if the user is able to checkout" line="6">
+<kw name="Click on checkout button" owner="Checkout">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${checkout_btn}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:48.549012" elapsed="0.061827"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:48.614625" level="INFO">${script} = document.evaluate("//button[normalize-space()='Checkout']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:48.612860" elapsed="0.001765"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:48.614625" level="INFO">Executing JavaScript:
+document.evaluate("//button[normalize-space()='Checkout']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:48.614625" elapsed="0.016384"/>
+</kw>
+<arg>${checkout_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:48.612860" elapsed="0.018149"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:53.631170" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:48.631009" elapsed="5.000161"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:53.634026" level="INFO">Clicking element '//button[normalize-space()='Checkout']'.</msg>
+<arg>${checkout_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:53.634026" elapsed="0.174837"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Proceed_btn}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:04:53.808863" elapsed="2.687799"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:04:56.505092" level="INFO">${script} = document.evaluate("//button[normalize-space()='Proceed']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:04:56.496662" elapsed="0.008430"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:56.505092" level="INFO">Executing JavaScript:
+document.evaluate("//button[normalize-space()='Proceed']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:04:56.505092" elapsed="0.016145"/>
+</kw>
+<arg>${Proceed_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:04:56.496662" elapsed="0.024575"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:04:59.521815" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:04:56.521237" elapsed="3.000578"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${Proceed_btn}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-25T18:04:59.521815" elapsed="0.317984"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:04:59.839799" level="INFO">Clicking element '//button[normalize-space()='Proceed']'.</msg>
+<arg>${Proceed_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:04:59.839799" elapsed="0.166132"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:04:48.549012" elapsed="11.456919"/>
+</kw>
+<kw name="Enter the Account Information" owner="Checkout">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${name_last}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:00.009197" elapsed="3.168054"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:03.182277" level="INFO">${script} = document.evaluate("//input[@name=\"firstName\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:03.179912" elapsed="0.002365"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:03.184291" level="INFO">Executing JavaScript:
+document.evaluate("//input[@name=\"firstName\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:03.184291" elapsed="0.014231"/>
+</kw>
+<arg>${name_first}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:03.177251" elapsed="0.021271"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:06.199082" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:03.198522" elapsed="3.000560"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:06.201095" level="INFO">Clicking element '//input[@name="firstName"]'.</msg>
+<arg>${name_first}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:06.201095" elapsed="0.190333"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:05:06.391428" level="INFO">${firstname} = aanysvdh</msg>
+<var>${firstname}</var>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:05:06.391428" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:06.397842" level="INFO">Typing text 'aanysvdh' into text field '//input[@name="firstName"]'.</msg>
+<arg>${name_first}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:06.397842" elapsed="0.233132"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${name_last}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:06.630974" elapsed="0.032985"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:06.672323" level="INFO">${script} = document.evaluate("//input[@name=\"lastName\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:06.663959" elapsed="0.008364"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:06.672323" level="INFO">Executing JavaScript:
+document.evaluate("//input[@name=\"lastName\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:06.672323" elapsed="0.016333"/>
+</kw>
+<arg>${name_last}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:06.663959" elapsed="0.024697"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:09.689479" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:06.688656" elapsed="3.000823"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:09.691242" level="INFO">Clicking element '//input[@name="lastName"]'.</msg>
+<arg>${name_last}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:09.691242" elapsed="0.178078"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:05:09.873915" level="INFO">${lastname} = cwvvoftl</msg>
+<var>${lastname}</var>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:05:09.869320" elapsed="0.004595"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:09.874425" level="INFO">Typing text 'cwvvoftl' into text field '//input[@name="lastName"]'.</msg>
+<arg>${name_last}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:09.874425" elapsed="0.270152"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${contact_phone}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:10.144577" elapsed="0.041419"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:10.194219" level="INFO">${script} = document.evaluate("//input[@name=\"contactPhone\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:10.192485" elapsed="0.001734"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:10.196736" level="INFO">Executing JavaScript:
+document.evaluate("//input[@name=\"contactPhone\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:10.196736" elapsed="0.013350"/>
+</kw>
+<arg>${contact_phone}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:10.185996" elapsed="0.030911"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:13.217442" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:10.216907" elapsed="3.000535"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:13.217442" level="INFO">Clicking element '//input[@name="contactPhone"]'.</msg>
+<arg>${contact_phone}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:13.217442" elapsed="0.189838"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:05:13.412408" level="INFO">${contact_num} = 0115178768</msg>
+<var>${contact_num}</var>
+<arg>10</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:05:13.412408" elapsed="0.001070"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:13.416170" level="INFO">Typing text '0115178768' into text field '//input[@name="contactPhone"]'.</msg>
+<arg>${contact_phone}</arg>
+<arg>${contact_num}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:13.416170" elapsed="0.281028"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${order_comments}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:13.697198" elapsed="0.045217"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:13.742415" level="INFO">${script} = document.evaluate("//textarea[@name=\"orderComments\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:13.742415" elapsed="0.004045"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:13.748680" level="INFO">Executing JavaScript:
+document.evaluate("//textarea[@name=\"orderComments\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:13.748680" elapsed="0.015195"/>
+</kw>
+<arg>${order_comments}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:13.742415" elapsed="0.024447"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:13.766862" level="INFO">Clicking element '//textarea[@name="orderComments"]'.</msg>
+<arg>${order_comments}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:13.766862" elapsed="0.172390"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:13.946943" level="INFO">Typing text 'Test Comment' into text field '//textarea[@name="orderComments"]'.</msg>
+<arg>${order_comments}</arg>
+<arg>Test Comment</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:13.946943" elapsed="0.259171"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Proceed_btn}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:14.206114" elapsed="0.037267"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:14.243381" level="INFO">${script} = document.evaluate("//button[normalize-space()='Proceed']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:14.243381" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:14.249306" level="INFO">Executing JavaScript:
+document.evaluate("//button[normalize-space()='Proceed']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:14.249306" elapsed="0.013464"/>
+</kw>
+<arg>${Proceed_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:14.243381" elapsed="0.019389"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:14.262770" level="INFO">Clicking element '//button[normalize-space()='Proceed']'.</msg>
+<arg>${Proceed_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:14.262770" elapsed="0.209745"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:05:00.009197" elapsed="14.465057"/>
+</kw>
+<kw name="Select the Delivery Option" owner="Checkout">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@class="slds-form-element__label flex-grow" and text()="Ground Best Way (USA-Canada)"]</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:14.475583" elapsed="1.584741"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:16.060324" level="INFO">${script} = document.evaluate("//span[@class=\"slds-form-element__label flex-grow\" and text()=\"Ground Best Way (USA-Canada)\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style....</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:16.060324" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:16.060324" level="INFO">Executing JavaScript:
+document.evaluate("//span[@class=\"slds-form-element__label flex-grow\" and text()=\"Ground Best Way (USA-Canada)\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:16.060324" elapsed="0.024755"/>
+</kw>
+<arg>//span[@class="slds-form-element__label flex-grow" and text()="Ground Best Way (USA-Canada)"]</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:16.060324" elapsed="0.024755"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:21.085403" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:16.085079" elapsed="5.000324"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:21.085403" level="INFO">Clicking element '//button[normalize-space()='Proceed']'.</msg>
+<arg>${Proceed_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:21.085403" elapsed="0.164205"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:05:14.475583" elapsed="6.776525"/>
+</kw>
+<kw name="Enter the purchase order number" owner="Checkout">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${purchase_order_no}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:21.254141" elapsed="0.045017"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:21.301177" level="INFO">${script} = document.evaluate("//input[@name=\"po-number\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:21.301177" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:21.305211" level="INFO">Executing JavaScript:
+document.evaluate("//input[@name=\"po-number\"]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:21.303192" elapsed="0.011724"/>
+</kw>
+<arg>${purchase_order_no}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:21.299158" elapsed="0.022014"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:24.323933" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:21.323294" elapsed="3.000639"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:24.323933" level="INFO">Clicking element '//input[@name="po-number"]'.</msg>
+<arg>${purchase_order_no}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:24.323933" elapsed="0.170208"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-25T18:05:24.497274" level="INFO">${random_digits} = 3750</msg>
+<var>${random_digits}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-25T18:05:24.497274" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-25T18:05:24.500366" level="INFO">${po_num} = PO-3750</msg>
+<var>${po_num}</var>
+<arg>PO-${random_digits}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-25T18:05:24.500366" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:24.500366" level="INFO">Typing text 'PO-3750' into text field '//input[@name="po-number"]'.</msg>
+<arg>${purchase_order_no}</arg>
+<arg>${po_num}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:24.500366" elapsed="0.217580"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:28.727568" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:24.727021" elapsed="4.000547"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${po_num}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-25T18:05:28.727568" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:05:21.254141" elapsed="7.473427"/>
+</kw>
+<kw name="Click on Place Order Button" owner="Checkout">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${place_order_btn}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:28.727568" elapsed="0.049391"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${place_order_btn}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-25T18:05:28.776959" elapsed="0.322253"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:29.103308" level="INFO">${script} = document.evaluate("//button[normalize-space()='Place Order']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:29.099212" elapsed="0.004096"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:29.103308" level="INFO">Executing JavaScript:
+document.evaluate("//button[normalize-space()='Place Order']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:29.103308" elapsed="0.016830"/>
+</kw>
+<arg>${place_order_btn}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:29.099212" elapsed="0.024052"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:32.126224" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:29.125255" elapsed="3.000969"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:32.128563" level="INFO">Clicking element '//button[normalize-space()='Place Order']'.</msg>
+<arg>${place_order_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:32.128563" elapsed="0.176804"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${order_confirmation_no}</arg>
+<arg>180</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T18:05:32.309492" elapsed="3.700675"/>
+</kw>
+<kw name="Highlight_Border" owner="Checkout">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-03-25T18:05:36.019876" level="INFO">${script} = document.evaluate("//a[normalize-space()='Continue Shopping']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";</msg>
+<var>${script}</var>
+<arg>SEPARATOR=</arg>
+<arg>document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-03-25T18:05:36.010167" elapsed="0.009709"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:36.019876" level="INFO">Executing JavaScript:
+document.evaluate("//a[normalize-space()='Continue Shopping']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "2px solid green";
+Without any arguments.</msg>
+<arg>${script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-25T18:05:36.019876" elapsed="0.017756"/>
+</kw>
+<arg>${continue_shopping}</arg>
+<arg>2px solid green</arg>
+<status status="PASS" start="2025-03-25T18:05:36.010167" elapsed="0.027465"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:41.037914" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:36.037632" elapsed="5.000282"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-25T18:05:41.037914" level="INFO">Clicking element '//a[normalize-space()='Continue Shopping']'.</msg>
+<arg>${continue_shopping}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-25T18:05:41.037914" elapsed="0.217856"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-25T18:05:46.262283" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-25T18:05:41.261429" elapsed="5.000854"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:05:28.727568" elapsed="17.534715"/>
+</kw>
+<kw name="Close the browser" owner="Checkout">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-25T18:05:46.262283" elapsed="2.823742"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:05:46.262283" elapsed="2.823742"/>
+</kw>
+<status status="PASS" start="2025-03-25T18:04:48.549012" elapsed="60.538775"/>
+</test>
+<status status="PASS" start="2025-03-25T18:04:48.525887" elapsed="60.568742"/>
+</suite>
+<status status="PASS" start="2025-03-25T18:00:33.941419" elapsed="315.165980"/>
+</suite>
+<statistics>
+<total>
+<stat pass="12" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest" id="s1" pass="12" fail="0" skip="0">01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest</stat>
+<stat name="01 LoginTest" id="s1-s1" pass="4" fail="0" skip="0">01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest.01 LoginTest</stat>
+<stat name="02 LoginToPartsStoreTest" id="s1-s2" pass="3" fail="0" skip="0">01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest.02 LoginToPartsStoreTest</stat>
+<stat name="03 CreateACartTest" id="s1-s3" pass="1" fail="0" skip="0">01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest.03 CreateACartTest</stat>
+<stat name="04 AddProductToCartTest" id="s1-s4" pass="1" fail="0" skip="0">01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest.04 AddProductToCartTest</stat>
+<stat name="05 EmergencyOrderTest" id="s1-s5" pass="2" fail="0" skip="0">01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest.05 EmergencyOrderTest</stat>
+<stat name="06 CheckoutTest" id="s1-s6" pass="1" fail="0" skip="0">01 LoginTest &amp; 02 LoginToPartsStoreTest &amp; 03 CreateACartTest &amp; 04 AddProductToCartTest &amp; 05 EmergencyOrderTest &amp; 06 CheckoutTest.06 CheckoutTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
