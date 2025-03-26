@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Resource    ./GlobalResources.robot
 
 *** Variables ***
 ${profile_icon}    //span[@class='menu-trigger-p slds-text-align_right slds-truncate slds-text-title_bold lwc-5uc1gleli5']
@@ -15,37 +16,30 @@ ${view_cart_btn}    //div[@class='btnBox desktopView']//btn[@class='btn viewCart
 ${daikin_logo}    //dxp_content_layout-site-logo[@class='lwc-440ckkrho00-host']//img[@class='lwc-6d0jmdgc6e8']
 
 *** Keywords ***
-Highlight_Border
-    [Arguments]    ${xpath}    ${border_style}
-    ${script}=    Catenate    SEPARATOR=
-    ...    document.evaluate("${xpath.replace('"', '\\"')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border = "${border_style}";
-    Execute JavaScript    ${script}
-
 Click on the profile icon
     Wait Until Element Is Visible    ${profile_icon}    30
-    Highlight_Border    ${profile_icon}    2px solid green
+    Highlight_Border    ${profile_icon}
     Sleep    3
     Click Element    ${profile_icon}
 Click on my carts option
     Wait Until Element Is Visible    ${my_carts}    10
-    Highlight_Border    ${my_carts}    2px solid green
+    Highlight_Border    ${my_carts}
     Sleep    3
     Click Element    ${my_carts}
 Create a new cart
     Wait Until Element Is Visible    ${new_cart_btn}    180
-    Highlight_Border    ${new_cart_btn}    2px solid green
+    Highlight_Border    ${new_cart_btn}
     Sleep    3
     Click Element    ${new_cart_btn}
 Rename the cart name
     Wait Until Element Is Visible    (//span[@class="textBlue"])[1]    180
-    Highlight_Border    (//span[@class="textBlue"])[1]    2px solid green
     Sleep    3
     Wait Until Element Is Visible    ${pencil_icon_curr_cart}    180
-    Highlight_Border    ${pencil_icon_curr_cart}    2px solid green
+    Highlight_Border    ${pencil_icon_curr_cart}
     Sleep    5
     Click Element    ${pencil_icon_curr_cart}
     Wait Until Element Is Visible    ${rename_curr_cart_txt_box}    50
-    Highlight_Border    ${rename_curr_cart_txt_box}    2px solid green
+    Highlight_Border    ${rename_curr_cart_txt_box}
     Sleep    3
     Click Element    ${rename_curr_cart_txt_box}
     Press Keys    ${rename_curr_cart_txt_box}    CTRL+a   BACKSPACE
@@ -53,12 +47,12 @@ Rename the cart name
     ${random_cart}=    Set Variable    Automation_test_${random_num}
     Input Text    ${rename_curr_cart_txt_box}    ${random_cart}
     Click Element    ${save_cart_name}
-    Highlight_Border    ${view_cart_btn}    2px solid green
+    Highlight_Border    ${view_cart_btn}
     Sleep    3
     Wait Until Element Is Visible    ${view_cart_btn}    40
     Click Element    ${view_cart_btn}
     Wait Until Element Is Visible    ${daikin_logo}    120
-    Highlight_Border    ${daikin_logo}    2px solid green
+    Highlight_Border    ${daikin_logo}
     Sleep    3
     Click Element    ${daikin_logo}
 
