@@ -1,49 +1,64 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    Collections
+Library    String
+Resource   ../Resources/Login.robot
 Resource    ./GlobalResources.robot
 
+
+
 *** Variables ***
-${browser}    chrome
-${url}    https://daa--qasit.sandbox.lightning.force.com/lightning/page/home
-${username}    rajendar.bolla@daikinapplied.com.qasit
-${password}    Daikin@2025
+
 ${login_btn}    //input[@id='Login']
 ${username_plh}    //input[@id='username']
 ${password_plh}    //input[@id='password']
 ${username_lbl}    //label[@class="label usernamelabel"]
 ${password_lbl}    //label[@for="password"]
+${login_validation_txt}    Commerce
+#${screenshot_index}    1  # Initialize screenshot index
+#${SCREENSHOT_DIR}    ${OUTPUT_DIR}/allure-results/screenshots
+#${SCREENSHOT_DIR}     C:/Users/Shreshta.K/PycharmProjects/SalesforceEcom/Testcases/output/allure/failure_${Test Name}.png
+
 
 *** Keywords ***
-Open browser with url
+Open Browser With URL
     Open Browser    ${url}    ${browser}
     Maximize Browser Window
     Set Browser Implicit Wait    6
 
-Close browser window
+Close Browser Window
     Close Browser
 
-Check if elements are visible
+Check If elements Are Visible
     Wait Until Element Is Visible    ${username_lbl}    30
     Element Should Be Visible    ${username_lbl}
     Wait Until Element Is Visible    ${password_lbl}    30
     Element Should Be Visible    ${password_lbl}
-Fill the Login details
+
+Fill The Login Details
     [Arguments]    ${username}    ${password}
-
     Highlight_Border    ${username_plh}
-    Sleep    5
     Input Text    ${username_plh}    ${username}
-
     Highlight_Border    ${password_plh}
-    Sleep    5
     Input Password    ${password_plh}    ${password}
 
-Click on the login button
+Click On The Login Button
     Highlight_Border    ${login_btn}
-    Sleep    4
+    Capture Page Screenshot
     Click Button    ${login_btn}
-    Wait Until Page Contains    Commerce    180
-    Page Should Contain    Commerce
+    Wait Until Page Contains    ${login_validation_txt}    180
+    Capture Page Screenshot
+    Page Should Contain    ${login_validation_txt}
+
+#Capture Screenshot On Failure
+#    ${test_name}=    Get Variable Value    ${TEST NAME}  # Get current test case name
+#   ${screenshot_name}=    Set Variable    selenium-screenshot-${screenshot_index}.png
+ #   ${screenshot_path}=    Capture Page Screenshot    ${OUTPUT_DIR}/${screenshot_name}
 
 
+  #  Log    Screenshot saved at ${screenshot_path}
+   # Log    [ATTACHMENT|${screenshot_path}]
+
+    #${screenshot_index}=    Evaluate    ${screenshot_index} + 1
+    #Set Suite Variable    ${screenshot_index}  # Update index globally
 
